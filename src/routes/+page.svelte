@@ -224,6 +224,7 @@
         left: calc(50% + 1.25em);
         align-self: center;
         z-index: 1;
+        pointer-events: none;
         content: var(--quantity-suffix);
         color: var(--text-color);
         font-size: var(--secondary-font-size);
@@ -235,6 +236,7 @@
         align-self: center;
         transform: translate(-50%, 0%);
         z-index: 1;
+        pointer-events: none;
         content: "and";
         color: var(--text-color);
         font-size: var(--secondary-font-size);
