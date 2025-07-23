@@ -1,6 +1,6 @@
 <!--
 @component
-* Ported to svelte from [React Wheel Picker](https://github.com/ncdai/react-wheel-picker])
+* Ported to svelte from [React Wheel Picker](https://github.com/ncdai/react-wheel-picker)
 * Credit to [ncdai](https://github.com/ncdai)
 -->
 <script lang="ts">

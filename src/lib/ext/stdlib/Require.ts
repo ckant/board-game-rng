@@ -1,5 +1,5 @@
 /**
- * Extensions for function requirements / prerequisites.
+ * Extensions for requirements / prerequisites.
  */
 export namespace Require {
   /**

@@ -1,5 +1,5 @@
 /**
- * Extensions for function checks.
+ * Extensions for checks.
  */
 export namespace Check {
   /**

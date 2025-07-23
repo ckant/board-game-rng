@@ -5,6 +5,7 @@ import { Strings } from "$lib/ext/stdlib/Strings"
 
 export namespace QueryParams {
   export function getOrNil(name: string): string | undefined {
+    // Page can't be accessed during static site generation
     if (!browser) return undefined
 
     const paramValue = page.url.searchParams.get(name)
@@ -12,6 +13,7 @@ export namespace QueryParams {
   }
 
   export function getIntOrNil(name: string): number | undefined {
+    // Matches only "normal-looking" integers
     const paramValue = getOrNil(name)
     if (nil(paramValue)) return undefined
 
@@ -19,9 +21,10 @@ export namespace QueryParams {
   }
 
   export function getBoolOrNil(name: string): boolean | undefined {
+    // Matches only "normal-looking" booleans and treats empty-valued params as true
     const paramValue = getOrNil(name)
     if (nil(paramValue)) return undefined
 
-    return paramValue === "" ? true : Strings.toBoolOrNil(paramValue)
+    return Strings.isEmpty(paramValue) ? true : Strings.toBoolOrNil(paramValue)
   }
 }
