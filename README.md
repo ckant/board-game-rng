@@ -22,7 +22,7 @@
   <a href="#license">License</a>
 </p>
 
-<div align="center"><img src="https://raw.githubusercontent.com/ckant/board-game-rng/main/media/demo.png" alt="preview" width="88%"></div>
+<div align="center"><img src="https://raw.githubusercontent.com/ckant/board-game-rng/main/media/demo.png" alt="preview" width="25%"></div>
 
 ## Summary
 
