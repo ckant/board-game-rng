@@ -1,7 +1,7 @@
 <!--
 @component
-* Ported to svelte from [https://github.com/ncdai/react-wheel-picker](React Wheel Picker)
-* Credit to [https://github.com/ncdai](ncdai)
+* Ported to svelte from [React Wheel Picker](https://github.com/ncdai/react-wheel-picker])
+* Credit to [ncdai](https://github.com/ncdai)
 -->
 <script lang="ts">
   import type { WheelPickerOption, WheelPickerProps } from "$lib/component-types/WheelPickerProps"
