@@ -13,15 +13,15 @@
   const ranges = {
     quantity: {
       start: 1,
-      endInclusive: 12,
+      endExclusive: 13,
     },
     from: {
       start: 1,
-      endInclusive: 100,
+      endExclusive: 100,
     },
     to: {
       start: 1,
-      endInclusive: 100,
+      endExclusive: 100,
     },
   } as const
 
@@ -55,14 +55,14 @@
     const first = Strings.toInt(from)
     const second = Strings.toInt(to)
 
-    const [start, endInclusive] = first <= second ? [first, second] : [second, first]
+    const [start, endExclusive] = first <= second ? [first, second + 1] : [second, first + 1]
 
-    if (!duplicates && quantityInt > endInclusive - start + 1) return undefined
+    if (!duplicates && quantityInt > endExclusive - start) return undefined
 
     return Random.integers({
       quantity: quantityInt,
       start,
-      endInclusive,
+      endExclusive,
       withReplacement: duplicates,
     })
   })

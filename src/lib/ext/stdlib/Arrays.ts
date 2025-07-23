@@ -17,6 +17,18 @@ export namespace Arrays {
     return xs[xs.length - 1]!
   }
   export const lastOrNil = A.last
-  export const range = A.range
+  export function range({
+    start,
+    endExclusive,
+  }: {
+    start: number
+    endExclusive: number
+  }): ArrayType<number> {
+    Require.integer(start)
+    Require.integer(endExclusive)
+    Require.validRange({ start, endExclusive })
+    return A.range(start, endExclusive - 1)
+  }
+
   export const take = A.take
 }

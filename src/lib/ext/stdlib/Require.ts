@@ -1,5 +1,3 @@
-import { Check } from "$lib/ext/stdlib/Check"
-
 /**
  * Extensions for function requirements / prerequisites.
  */
@@ -20,12 +18,29 @@ export namespace Require {
   }
 
   /**
-   * Asserts that {@link value} is in the range [{@link start}, {@link endInclusive}].
+   * Asserts that {@link start} is less than or equal to {@link endExclusive}.
    */
-  export function inRange(value: number, range: { start: number; endInclusive: number }): void {
-    const { start, endInclusive } = range
-    if (!Check.inRange(value, range))
-      throw new Error(`${value} is not in [${start},${endInclusive}]`)
+  export function validRange({
+    start,
+    endExclusive,
+  }: {
+    start: number
+    endExclusive: number
+  }): void {
+    if (start > endExclusive) throw new Error(`[${start},${endExclusive}) is an invalid range`)
+  }
+
+  /**
+   * Asserts that {@link value} is in the range [{@link start}, {@link endExclusive}).
+   */
+  export function inRange(
+    value: number,
+    { start, endExclusive }: { start: number; endExclusive: number },
+  ): void {
+    validRange({ start, endExclusive })
+
+    if (value < start || value >= endExclusive)
+      throw new Error(`${value} is not in [${start},${endExclusive})`)
   }
 
   /**

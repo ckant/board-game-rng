@@ -3,20 +3,19 @@
  */
 export namespace Check {
   /**
-   * Checks that {@link value} is in the range [{@link start}, {@link endInclusive}].
+   * Checks that {@link value} is in the range [{@link start}, {@link endExclusive}).
    */
   export function inRange(
     value: number,
     {
       start,
-      endInclusive,
+      endExclusive,
     }: {
       start: number
-      endInclusive: number
+      endExclusive: number
     },
   ): boolean {
-    const [from, to] = start <= endInclusive ? [start, endInclusive] : [endInclusive, start]
-
-    return value >= from && value <= to
+    if (start > endExclusive) throw new Error(`[${start},${endExclusive}) is an invalid range`)
+    return value >= start && value < endExclusive
   }
 }

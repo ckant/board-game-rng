@@ -1,20 +1,13 @@
 import type { WheelPickerOption } from "$lib/component-types/WheelPickerProps"
-import { Iterables } from "$lib/ext/stdlib/Iterables"
+import { Arrays } from "$lib/ext/stdlib/Arrays"
 import { Require } from "$lib/ext/stdlib/Require"
 
 export namespace WheelPickerOptions {
-  export function ofRange({
-    start = 1,
-    endInclusive,
-  }: {
-    start?: number
-    endInclusive: number
-  }): WheelPickerOption[] {
-    Require.integer(start)
-    Require.integer(endInclusive)
+  export function ofRange(range: { start: number; endExclusive: number }): WheelPickerOption[] {
+    Require.integer(range.start)
+    Require.integer(range.endExclusive)
+    Require.validRange(range)
 
-    return Iterables.range({ start, endExclusive: endInclusive + 1 })
-      .map((i) => ({ label: `${i}`, value: `${i}` }))
-      .toArray()
+    return Arrays.range(range).map((i) => ({ label: `${i}`, value: `${i}` }))
   }
 }

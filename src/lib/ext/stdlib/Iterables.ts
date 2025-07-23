@@ -6,9 +6,10 @@ import { Require } from "$lib/ext/stdlib/Require"
 export namespace Iterables {
   /**
    * Returns an {@link IteratorObject} that yields the integers from
-   * {@link start} to (but not including) {@link endExclusive}.
+   * {@link start} up to (but not including) {@link endExclusive}.
    *
-   * Requires that {@link start} and {@link endExclusive} must be integers.
+   * Requires that {@link start} and {@link endExclusive} must be integers
+   * and {@link start} must be less than or equal to {@link endExclusive}.
    */
   export function range({
     start,
@@ -19,23 +20,14 @@ export namespace Iterables {
   }): IteratorObject<number> {
     Require.integer(start)
     Require.integer(endExclusive)
+    Require.validRange({ start, endExclusive })
 
-    if (start <= endExclusive) {
-      return Iterator.from({
-        *[Symbol.iterator](): Generator<number> {
-          for (let value = start; value < endExclusive; value++) {
-            yield value
-          }
-        },
-      })
-    } else {
-      return Iterator.from({
-        *[Symbol.iterator](): Generator<number> {
-          for (let value = start; value > endExclusive; value--) {
-            yield value
-          }
-        },
-      })
-    }
+    return Iterator.from({
+      *[Symbol.iterator](): Generator<number> {
+        for (let value = start; value < endExclusive; value++) {
+          yield value
+        }
+      },
+    })
   }
 }
