@@ -54,7 +54,7 @@ e.g. If you need **5** starting cards from a deck of **25** possible ones:
 > [!NOTE]
 > Defaults to generating 2 numbers from 1 to 6 without duplicates
 
-[ckant.github.io/board-game-rng](https://ckant.github.io/board-game-rng)
+[ckant.com/board-game-rng](https://ckant.com/board-game-rng)
 
 ### With custom initial values
 
@@ -64,7 +64,7 @@ e.g. If you need **5** starting cards from a deck of **25** possible ones:
 > [!TIP]
 > Save a bookmark for one-click generation in the future
 
-[ckant.github.io/board-game-rng?quantity=5&from=5&to=20&duplicates](https://ckant.github.io/board-game-rng?quantity=5&from=5&to=20&duplicates)
+[ckant.com/board-game-rng?quantity=5&from=5&to=20&duplicates](https://ckant.com/board-game-rng?quantity=5&from=5&to=20&duplicates)
 
 ## Development
 
