@@ -199,6 +199,7 @@
       font-size: var(--primary-font-size);
       -webkit-touch-callout: none;
       -webkit-tap-highlight-color: transparent;
+      overscroll-behavior-y: none;
       touch-action: manipulation;
       -moz-user-select: -moz-none;
       -webkit-user-select: none;

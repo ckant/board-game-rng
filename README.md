@@ -44,7 +44,8 @@ e.g. If you need **5** starting cards from a deck of **25** possible ones:
 ## Features
 
 - Mobile-first design with number-picker wheels and simple toggles
-- Query params to allow for bookmarking custom initial values
+- Progressive web app (PWA) support for adding to home screen
+- Query params for bookmarking custom initial values
 
 ## Examples
 
